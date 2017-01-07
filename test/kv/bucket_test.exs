@@ -25,7 +25,7 @@ defmodule TopChefStore.BucketTest do
     assert Bucket.get(bucket, "kristen_8_10") == dish_data
   end
 
-  test "deletes key from bucket" do
+  test "deletes key from bucket", %{bucket: bucket} do
     Bucket.put(bucket, "foo", "bar")  
     assert Bucket.delete(bucket, "foo") == "bar"
     assert Bucket.get(bucket, "foo") == nil
